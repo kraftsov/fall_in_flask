@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "flask-from-null"
+version = "0.1.0"
+description = ""
+authors = ["kraft <krafstov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+black = "^23.12.1"
+flask = "^3.0.0"
+flask-sqlalchemy = "^3.1.1"
+flask-migrate = "^4.0.5"
+psycopg = "^3.1.16"
+sqlalchemy = "^2.0.24"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 69
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | \.templates
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+  | base.html
+)
+'''
